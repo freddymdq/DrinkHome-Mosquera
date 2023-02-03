@@ -1,4 +1,4 @@
-
+import { Button } from "../Common/Button"
 
 const CartWidget = () => {
     return (
@@ -16,7 +16,9 @@ const CartWidget = () => {
                             <span className="font-bold text-lg text-white">8 Items</span>
                             <span className="text-info">Subtotal: $999</span>
                             <div className="card-actions">
-                                <button className="btn btn-success btn-block">Ver Carrito</button>
+                                <Button className="btn btn-success" type="submit"> 
+                                     Ver Carrito 
+                                </Button>
                             </div>
                         </div>
                     </div>
