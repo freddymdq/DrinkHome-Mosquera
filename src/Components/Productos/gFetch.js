@@ -51,11 +51,11 @@ let products = [
         foto: 'https://ibb.co/1v6RrjD',
     }
 ]
+
 export const gFetch = () => {
-    return new Promise(( resolve, reject )=>{    
-      setTimeout(()=>{
-        resolve( products )
-      }, 2000) 
-   })
-  
-  } 
+    return new Promise(( resolve, reject ) => {
+        setTimeout(() =>{
+            resolve(products)
+        },1500)
+    })
+}
