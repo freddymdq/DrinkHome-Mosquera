@@ -7,7 +7,8 @@ let products = [
         description: "Delux whisky reserve ", 
         price:23780, 
         stock:4, 
-        foto: 'https://ibb.co/2dzkhXV'
+        foto: 'https://ibb.co/2dzkhXV',
+        categoria: 'whisky'
 
     },
     {
@@ -16,7 +17,8 @@ let products = [
         description: "Red Label", 
         price:8780, 
         stock:10, 
-        foto: 'https://ibb.co/S3sc6Pw'
+        foto: 'https://ibb.co/S3sc6Pw',
+        categoria: 'whisky'
     },
     {
         id: 3, 
@@ -24,7 +26,8 @@ let products = [
         description: "Black Label", 
         price:11780, 
         stock:7, 
-        foto: 'https://ibb.co/k2ybBDk'
+        foto: 'https://ibb.co/k2ybBDk',
+        categoria: 'whisky'
     },
     {
         id: 4, 
@@ -32,7 +35,8 @@ let products = [
         description: "Excelence Whisky reserve", 
         price:13780, 
         stock:11, 
-        foto:'https://ibb.co/CmnjbRc'
+        foto:'https://ibb.co/CmnjbRc',
+        categoria:'wisky'
     },
     {
         id: 5, 
@@ -40,7 +44,8 @@ let products = [
         description: "Delux Ron destile reserve", 
         price:18780, 
         stock:12, 
-        foto: 'https://ibb.co/f9VB5kT'
+        foto: 'https://ibb.co/f9VB5kT',
+        categoria:'spirits'
     },
     {
         id: 6, 
@@ -49,6 +54,7 @@ let products = [
         price:11780, 
         stock:9, 
         foto: 'https://ibb.co/1v6RrjD',
+        categoria: 'aperitive'
     }
 ]
 
