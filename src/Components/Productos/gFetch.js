@@ -35,7 +35,7 @@ let products = [
         price:13780, 
         stock:11, 
         foto:'https://i.ibb.co/0MLB74Z/img-the-singleton.png',
-        categoria:'wisky'
+        categoria:'whisky'
     },
     {
         id: 5, 
@@ -53,7 +53,7 @@ let products = [
         price:11780, 
         stock:9, 
         foto: 'https://i.ibb.co/G9rs3xn/img-sheridan.png',
-        categoria: 'aperitive'
+        categoria: 'spirits'
     }
 ]
 

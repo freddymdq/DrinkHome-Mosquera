@@ -1,9 +1,41 @@
+import { useEffect, useState } from "react"
+import { gFetch } from "../Productos/gFetch"
+
+const ItemDetail = () =>{
+
+/*     const [item, setItem] = useState()
+
+    useEffect(()=> {
+        getItemDetail().then (res => {
+            setItem(res)
+        })
+    }, [])
+
+    const getItemDetail = () => {
+        return new Promise ((resolve, reject)=> {
+            setTimeout(() => {
+                resolve(gFetch)
+            },2000);
+        } )
+    }
+ */
+   /*  return (
+        <div>
+           <h1>{item.title}</h1>
+        </div>
+    )
+} */
+}
+export default ItemDetail
 
 
+
+
+/* 
 import { useEffect, useState } from "react"
 import { gFetch } from "../Productos/gFetch"
 import {ItemCount} from '../ItemListContainer/ItemCount'
-import { useParams } from "react-router-dom"
+import { useParams,  } from "react-router-dom" */
 
 /* 
 export const ItemDetail = (
@@ -27,16 +59,16 @@ export const ItemDetail = (
           },1000)  
         })
      } */
-
+/* 
      export const ItemDetail =({}) => {
         const [productos, setProductos] = useState ([])
-        const {idCategoria} = useParams()
+        const {idProducto} = useParams()
 
     useEffect(()=> {
-        if (idCategoria){
+        if (idProducto){
             gFetch()
             .then(res =>{
-                setProductos(res.filter(producto => producto.categoria === idCategoria ))
+                setProductos(res.filter(producto => producto.id === idProducto ))
             })
             .catch(error=>console.log(error))
         } else {
@@ -47,16 +79,16 @@ export const ItemDetail = (
             .catch(error => console.log(error))
         }
 
-    }, 1000)
+    }, [idProducto])
     
 
     return (
-        <>
-        { productos.map(producto =>   (
-            <div key={producto.id} className='card w-25 mt-2' >
+        <div>
+        { productos.map(producto =>  (
+            <div key={producto.id} className='card w-25 mt-2 ' >
                 <div className="flex flex-col mt-[90px] gap-5">
                     <section className="container bg-neutral rounded-[50px] mx-auto px-8 py-8 flex flex-col">
-                    <figure><img src= {producto.foto} alt="Whisitem.ky" /></figure>
+                    <figure><img src= {producto.foto} alt="Whisky" /></figure>
                     <p className="text-white font-black text-7xl pb-5">{producto.title}</p>
                     <h2 className="text-neutral-600 font-bold text-3xl">{producto.description}</h2>
                     <p className="text-base-300 pt-12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam atque quo maxim. Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi voluptatum ducimus magni eaque ipsum, esse odit nisi aliquam</p>
@@ -67,12 +99,13 @@ export const ItemDetail = (
                     <ItemCount stock={producto.stock}/>
                     </section>
                 </div>
+                
             </div>
         )
         )}
             
-        </>
+        </div>
     )
 }
 
-export default ItemDetail 
+export default ItemDetail  */
