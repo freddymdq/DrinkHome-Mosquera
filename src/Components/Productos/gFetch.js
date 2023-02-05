@@ -1,5 +1,4 @@
 
-
 let products = [
     {
         id: 1, 
@@ -7,7 +6,7 @@ let products = [
         description: "Delux whisky reserve ", 
         price:23780, 
         stock:4, 
-        foto: 'https://ibb.co/2dzkhXV',
+        foto: 'https://i.ibb.co/3Bhwm06/img-swing.png',
         categoria: 'whisky'
 
     },
@@ -17,7 +16,7 @@ let products = [
         description: "Red Label", 
         price:8780, 
         stock:10, 
-        foto: 'https://ibb.co/S3sc6Pw',
+        foto: 'https://i.ibb.co/VVyb8kt/jhonnie-walker-red-label.png',
         categoria: 'whisky'
     },
     {
@@ -26,7 +25,7 @@ let products = [
         description: "Black Label", 
         price:11780, 
         stock:7, 
-        foto: 'https://ibb.co/k2ybBDk',
+        foto: 'https://i.ibb.co/RzYCMS5/jhonnie-walker.png',
         categoria: 'whisky'
     },
     {
@@ -35,7 +34,7 @@ let products = [
         description: "Excelence Whisky reserve", 
         price:13780, 
         stock:11, 
-        foto:'https://ibb.co/CmnjbRc',
+        foto:'https://i.ibb.co/0MLB74Z/img-the-singleton.png',
         categoria:'wisky'
     },
     {
@@ -44,7 +43,7 @@ let products = [
         description: "Delux Ron destile reserve", 
         price:18780, 
         stock:12, 
-        foto: 'https://ibb.co/f9VB5kT',
+        foto: 'https://i.ibb.co/0MWFj0D/img-zunca.png',
         categoria:'spirits'
     },
     {
@@ -53,7 +52,7 @@ let products = [
         description: "Aperitive", 
         price:11780, 
         stock:9, 
-        foto: 'https://ibb.co/1v6RrjD',
+        foto: 'https://i.ibb.co/G9rs3xn/img-sheridan.png',
         categoria: 'aperitive'
     }
 ]
