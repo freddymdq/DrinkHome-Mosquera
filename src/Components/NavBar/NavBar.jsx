@@ -12,13 +12,14 @@ const NavBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral text-white font-bold  rounded-box w-52">
                             <Link to={'/'}>
-                                <li>Productos</li>
+                                <li className="p-5 btn btn-ghost">Productos</li>
+                                
                             </Link>
                             <Link to = {'/categoria/whisky'}>
-                                <li>Whisky</li>
+                                <li className="p-5 btn btn-ghost">Whisky</li>
                             </Link>
                             <Link to = {'/categoria/spirits'}>
-                            <li>Spirits</li>
+                            <li className="p-5 btn btn-ghost">Spirits</li>
                             </Link>
                         </ul>
                     </div>
@@ -29,13 +30,13 @@ const NavBar = () => {
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-white font-bold">
                             <Link to={'/'}>
-                                <li className="p-5">Productos</li>
+                                <li className="p-5 btn btn-ghost">Productos</li>
                             </Link>
                             <Link to = {'/categoria/whisky'}>
-                                <li className="p-5">Whisky</li>
+                                <li className="p-5 btn btn-ghost">Whisky</li>
                             </Link>
                             <Link to = {'/categoria/spirits'}>
-                            <li className="p-5">Spirits</li>
+                            <li className="p-5 btn btn-ghost">Spirits</li>
                             </Link>
                     </ul>
                 </div>
