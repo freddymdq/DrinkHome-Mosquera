@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { gFetch } from "../Productos/gFetch"
 import { Link, useParams } from "react-router-dom"
+import { Button } from "../Common/Button"
 
 export const ItemListContainer =({}) =>{
 
@@ -39,7 +40,9 @@ export const ItemListContainer =({}) =>{
                         <h3 className="font-bold text-4xl text-green-500 mb-12">${producto.price}</h3>
                         <p className="text-white m-3">Stock Disponible: {producto.stock}</p>
                         
-                        <button className="btn btn-primary">Ver detalles</button>      
+                        <Button className="btn btn-success" type="submit"> 
+                            Ver detalles
+                        </Button>      
                     </div>
                 </Link>
             </div>

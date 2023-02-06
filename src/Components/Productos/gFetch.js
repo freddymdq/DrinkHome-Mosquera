@@ -31,7 +31,7 @@ let products = [
     {
         id: 4, 
         title:"SINGLETON", 
-        description: "Excelence Whisky reserve", 
+        description: "Whisky reserve", 
         price:13780, 
         stock:11, 
         foto:'https://i.ibb.co/0MLB74Z/img-the-singleton.png',
@@ -40,7 +40,7 @@ let products = [
     {
         id: 5, 
         title:"ZACAPA", 
-        description: "Delux Ron destile reserve", 
+        description: "Delux Ron destile ", 
         price:18780, 
         stock:12, 
         foto: 'https://i.ibb.co/0MWFj0D/img-zunca.png',

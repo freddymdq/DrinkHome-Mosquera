@@ -7,7 +7,7 @@ import Oferta from './Components/ItemListContainer/Ofertas';
 import { BrowserRouter,Navigate, Route, Routes } from 'react-router-dom';
 import { Footer } from './Components/Footer/Footer';
 import { ItemListContainer } from './Components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
+import {ItemDetailContainer} from './Components/ItemDetailContainer/ItemDetailContainer'
 
 
 
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route  path='/' element={ <ItemListContainer /> } />
         <Route  path='/categoria/:idCategoria' element={ <ItemListContainer/> } />
-        <Route  path='/detalle/:idProducto' element={ <ItemDetailContainer /> } />        
+        <Route path='/detalle/:detalleId' element={<ItemDetailContainer/> } />
         <Route path='*' element={ <Navigate to='/' /> } />
       </Routes>
         <Footer />

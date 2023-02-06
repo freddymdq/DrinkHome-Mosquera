@@ -1,45 +1,34 @@
+
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import ItemDetail from "../ItemDetail/ItemDetail"
+import ItemDetail from "../ItemDetail/ItemDetail"; 
 
 
-const ItemDetailContainer = () => {
-  const { idProducto } = useParams()
-  console.log(idProducto)
-// mocks con id 
+const productos = [
+  {id: 1, title:"SWING", description: "Delux whisky reserve ", price:23780, stock:4, foto: 'https://i.ibb.co/3Bhwm06/img-swing.png',categoria: 'whisky'},
+  {id: 2, title:"J. WALKER", description: "Red Label", price:8780, stock:10, foto: 'https://i.ibb.co/VVyb8kt/jhonnie-walker-red-label.png',categoria: 'whisky'},
+  {id: 3,  title:"J. WALKER", description: "Black Label", price:11780,  stock:7,  foto: 'https://i.ibb.co/RzYCMS5/jhonnie-walker.png',categoria: 'whisky'},
+  {id: 4, title:"SINGLETON", description: "Whisky reserve", price:13780, stock:11,  foto:'https://i.ibb.co/0MLB74Z/img-the-singleton.png', categoria:'whisky'},
+  {id: 5, title:"ZACAPA", description: "Delux Ron destile ", price:18780, stock:12,  foto: 'https://i.ibb.co/0MWFj0D/img-zunca.png',categoria:'spirits'},
+  {id: 6, title:"SHERIDANS",  description: "Aperitive",  price:11780, stock:9, foto: 'https://i.ibb.co/G9rs3xn/img-sheridan.png',categoria: 'spirits'}
+]
+
+export const ItemDetailContainer = () => {
+  const [data, setData] = useState({});
+  const { detalleId } = useParams();
+
+  useEffect(() => {
+      const getData = new Promise(resolve => {
+          setTimeout(() => {
+              resolve(productos);
+          }, 1000);
+      });
+
+      getData.then(res => setData(res.find(producto => producto.id === parseInt(detalleId))));
+  }, [])
+
   return (
-    <div className="border border-5 border-danger  m-3">
-      <ItemDetail />
-    </div>
+      <ItemDetail data={data} />
   )
 }
-
-export default ItemDetailContainer
-
-
-
-/* import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import ItemDetail from "../ItemDetail/ItemDetail"
-import { gFetch } from "../Productos/gFetch"
-
-
-const ItemDetailContainer = () => {
-  const {id} = useParams()
-  const [item, setItem] = useState({})
-
-  const getProduct = () => new Promise ((resolve, reject)=>{
-    setTimeout(()=> resolve(gFetch.find(product => product.id == id)),2000)
-  })
-  useEffect(() => {
-    getProduct()
-    .then(response=>setItem(response))
-  },[])
-
-  return (
-    <div>
-       <h1>{item.title}</h1>
-    </div>
-)
-
-}
-export default ItemDetailContainer */
+export default ItemDetailContainer;

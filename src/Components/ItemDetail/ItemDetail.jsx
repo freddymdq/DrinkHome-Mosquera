@@ -1,111 +1,56 @@
-import { useEffect, useState } from "react"
-import { gFetch } from "../Productos/gFetch"
+import {ItemCount} from "../ItemListContainer/ItemCount"
 
-const ItemDetail = () =>{
-
-/*     const [item, setItem] = useState()
-
-    useEffect(()=> {
-        getItemDetail().then (res => {
-            setItem(res)
-        })
-    }, [])
-
-    const getItemDetail = () => {
-        return new Promise ((resolve, reject)=> {
-            setTimeout(() => {
-                resolve(gFetch)
-            },2000);
-        } )
-    }
- */
-   /*  return (
-        <div>
-           <h1>{item.title}</h1>
-        </div>
-    )
-} */
-}
-export default ItemDetail
-
-
-
-
-/* 
-import { useEffect, useState } from "react"
-import { gFetch } from "../Productos/gFetch"
-import {ItemCount} from '../ItemListContainer/ItemCount'
-import { useParams,  } from "react-router-dom" */
-
-/* 
-export const ItemDetail = (
-    {title, description, stock, price, foto }
-) => {
-
-    const [item, setItem] = useState([])
-
-    useEffect(() => {
-        getItemDetail()
-        .then(res => {
-            setItem(res)
-        })
-        .catch(err => {console.log(err)})
-    }, [])
-
-    const getItemDetail = () => {
-        return new Promise ( (resolve, reject)  => {
-          setTimeout(() => {
-            resolve(gFetch)
-          },1000)  
-        })
-     } */
-/* 
-     export const ItemDetail =({}) => {
-        const [productos, setProductos] = useState ([])
-        const {idProducto} = useParams()
-
-    useEffect(()=> {
-        if (idProducto){
-            gFetch()
-            .then(res =>{
-                setProductos(res.filter(producto => producto.id === idProducto ))
-            })
-            .catch(error=>console.log(error))
-        } else {
-            gFetch()
-            .then(res=>{
-                setProductos(res)
-            })
-            .catch(error => console.log(error))
-        }
-
-    }, [idProducto])
-    
-
-    return (
-        <div>
-        { productos.map(producto =>  (
-            <div key={producto.id} className='card w-25 mt-2 ' >
-                <div className="flex flex-col mt-[90px] gap-5">
-                    <section className="container bg-neutral rounded-[50px] mx-auto px-8 py-8 flex flex-col">
-                    <figure><img src= {producto.foto} alt="Whisky" /></figure>
-                    <p className="text-white font-black text-7xl pb-5">{producto.title}</p>
-                    <h2 className="text-neutral-600 font-bold text-3xl">{producto.description}</h2>
-                    <p className="text-base-300 pt-12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam atque quo maxim. Lorem ipsum dolor sit amet consectetur adipisicing elit. In modi voluptatum ducimus magni eaque ipsum, esse odit nisi aliquam</p>
-                    <p className="text-base-300 pt-12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam officiis cumque esse voluptate atque quo maxim</p>
-                        <div className="pt-12 mt-[50px]">
-                            <span className="text-green-700 font-bold text-5xl pb-5">${producto.price}</span>
-                        </div>
-                    <ItemCount stock={producto.stock}/>
-                    </section>
+export const ItemDetail = ({ data }) => {
+ 
+  return (
+     
+    < div className="bg-neutral">
+      <div className="flex flex-col  gap-5 bg-black items-center ">
+          <div key={data.id} className="container-full mb-[50px]  w-[400px] mt-[50px] h-[600px] m-t rounded-[30px] bg-neutral mx-auto relative flex justify-center">
+            <section className="container  bg-neutral items-center rounded-[50px] px-8 py-8 flex flex-col">
+              <img src= {data.foto} width="100px" alt="Whisky"/>
+              <p className="text-white font-black text-5xl pb-2">{data.title}</p>
+              <h2 className="text-neutral-600 font-bold text-3xl">{data.description}</h2>
+              <p className="text-base-300 pt-1 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam atque quo maxim.</p>
+                <div className="pt-1 ">
+                  <span className="text-green-700 font-bold text-5xl pb-5">${data.price}</span>
                 </div>
-                
-            </div>
-        )
-        )}
-            
+                   <ItemCount stock={data.stock}/> 
+              </section>
+          </div>
+      </div>
+    </div>
+  )
+};
+
+export default ItemDetail;
+
+
+
+
+
+
+/* 
+const ItemDetail = ({idProducto}) => {
+    return (
+     
+        < div className="bg-neutral">
+          <div className="flex flex-col  gap-5 bg-black items-center ">
+              <div key={idProducto.id} className="container-full  w-[400px] mt-[50px] h-[600px] m-t rounded-[30px] bg-neutral mx-auto relative flex justify-center">
+                <section className="container bg-neutral items-center rounded-[50px] px-8 py-8 flex flex-col">
+                  <img src= {idProducto.foto} width="100px" alt="Whisky"/>
+                  <p className="text-white font-black text-5xl pb-2">{idProducto.title}</p>
+                  <h2 className="text-neutral-600 font-bold text-3xl">{idProducto.description}</h2>
+                  <p className="text-base-300 pt-1 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam atque quo maxim.</p>
+                    <div className="pt-1 ">
+                      <span className="text-green-700 font-bold text-5xl pb-5">${idProducto.price}</span>
+                    </div>
+                       <ItemCount stock={producto.stock}/> 
+                  </section>
+              </div>
+          </div>
         </div>
-    )
+      )
 }
 
-export default ItemDetail  */
+export default ItemDetail */
