@@ -26,21 +26,21 @@ export const ItemListContainer =({}) =>{
     }, [idCategoria])
 
     return (
-        <div className="container-full h-[800px] pt-[70px] bg-neutral mx-auto  flex ">
-            {/* <h1 className="">PRODUCTOS</h1> */}
+        <div className="mx-auto text-center  bg-neutral flex  flex-wrap  font-bold gap-5 justify-beetwend text-white pt-[30px]">
+          {/*  <h1 className="">PRODUCTOS</h1>  */}
         { productos.map(producto => (
-            <div key={producto.id} className="container-lg w-[500px] h-[500px] m-t rounded-[30px] bg-neutral mx-auto relative flex justify-center">
+            <div key={producto.id} className="container-lg  mt-[70px] w-[350px]  rounded-[50px]  bg-black mb-[30px] mx-auto relative flex justify-center">
                 <Link to={`/detalle/${producto.id}`}>
                     <div>
                         <img src={producto.foto} width="200px" alt="Foto producto" />
                     </div>
                     <div className="flex flex-col items-center my-auto">
                         <h1 className="font-black text-3xl text-gray-200">{producto.title}</h1>
-                        <p className="text-gray-200 mb-12">{producto.description}</p>
+                        <p className="text-gray-200 mb-10">{producto.description}</p>
                         <h3 className="font-bold text-4xl text-green-500 mb-12">${producto.price}</h3>
-                        <p className="text-white m-3">Stock Disponible: {producto.stock}</p>
+                        <p className="text-white m-2">Stock Disponible: {producto.stock}</p>
                         
-                        <Button className="btn btn-success" type="submit"> 
+                        <Button className="btn btn-success mb-5" type="submit"> 
                             Ver detalles
                         </Button>      
                     </div>
