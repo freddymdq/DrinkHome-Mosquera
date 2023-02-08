@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { gFetch } from "../Productos/gFetch"
 import { Link, useParams } from "react-router-dom"
 import { Button } from "../Common/Button"
+import Titulo from "./Title"
 
 export const ItemListContainer =({}) =>{
 
@@ -26,8 +27,9 @@ export const ItemListContainer =({}) =>{
     }, [idCategoria])
 
     return (
+        <>
+        <Titulo text3="CATALOGO"/>
         <div className="mx-auto text-center  bg-[#151515] flex  flex-wrap  font-bold  justify-beetwend text-white pt-[30px] p-[100px]">
-          {/*  <h1 className="">PRODUCTOS</h1>  */}
         { productos.map(producto => (
             <div key={producto.id} className="container-lg  mt-5 w-[450px]  rounded-[50px]  bg-black mb-[30px] mx-auto relative flex justify-center">
                 <Link to={`/detalle/${producto.id}`}>
@@ -47,8 +49,9 @@ export const ItemListContainer =({}) =>{
                 </Link>
             </div>
               )
-            )}
+              )}
         </div>
+        </>
         )
 
     }

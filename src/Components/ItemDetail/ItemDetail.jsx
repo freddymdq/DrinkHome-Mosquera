@@ -20,9 +20,9 @@ export const ItemDetail = ({ data }) => {
               </section>
           </div>
       </div>
-      <Button>
+      {/* <Button>
           Productos
-      </Button>
+      </Button> */}
     </div>
   )
 };
