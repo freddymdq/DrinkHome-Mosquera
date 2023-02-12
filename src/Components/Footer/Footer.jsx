@@ -1,3 +1,6 @@
+
+
+
 export const Footer = () => {
     return (
         <footer className="footer items-center p-4 bg-black text-neutral-content">
