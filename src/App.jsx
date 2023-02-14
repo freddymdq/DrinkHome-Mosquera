@@ -5,7 +5,10 @@ import { BrowserRouter,Navigate, Route, Routes } from 'react-router-dom';
 import { Footer } from './Components/Footer/Footer';
 import { ItemListContainer } from './Components/ItemListContainer/ItemListContainer';
 import {ItemDetailContainer} from './Components/ItemDetailContainer/ItemDetailContainer'
+import { createContext } from 'react';
 /* import {Cart} from './Components/Common/Cart' */
+
+
 
 function App() {
   return (

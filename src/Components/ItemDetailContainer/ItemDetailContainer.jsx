@@ -19,7 +19,7 @@ const productos = [
   {id: 11, title:"SMIRNOFF", description: "Vodka Green Apple ", price:1880, stock:17, foto: 'https://i.ibb.co/mC9Dvxv/smirnoff-apple.png',categoria: 'spirits'},
   {id: 12, title:"KETEL ONE", description: "Vodka LimitOne", price:1880, stock:19, foto: 'https://i.ibb.co/hM1sRgP/Ketel-One-VODKA.png',categoria: 'spirits'},
   {id: 13, title:"ZACAPA",  description: "Ron Deliz Victory", price: 21880,  stock:39, foto: 'https://i.ibb.co/qN48MP7/ron-deliz-zacapa.png',categoria: 'spirits'},
-  /* {id: 14, title:"GRAND OLD PARR", description: "Whisky Aged 12 Year", price: 12880, stock:19, foto: 'https://i.ibb.co/TbqqJ3k/grand-old-parr-whisky.png',categoria: 'whisky'}, */
+  {id: 14, title:"GRAND OLD PARR", description: "Whisky Aged 12 Year", price: 12880, stock:19, foto: 'https://i.ibb.co/TbqqJ3k/grand-old-parr-whisky.png',categoria: 'whisky'},
   {id: 15, title:"CARDHU", description: "Whisky Aged 20 Year", price: 12880, stock:21, foto: 'https://i.ibb.co/jwgDDPT/cardhu.png',categoria: 'whisky'},
   {id: 16, title:"BUCANANS", description: "Whisky Deluxe", price: 12880, stock:20, foto: 'https://i.ibb.co/cFQRMQk/bucanans-delixe-whisky.png',categoria: 'whisky'},
   

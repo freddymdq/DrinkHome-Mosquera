@@ -4,63 +4,49 @@ import { Link, useParams, useSearchParams } from "react-router-dom"
 import { Button } from "../Common/Button"
 import Titulo from "./Title"
 
-export const ItemListContainer =({}) =>{
 
-    const [productos, setProductos] = useState ([])
-    const {idCategoria} = useParams()
-    const [query, setQuery]= useState("");
+/* export const gFetch = ({idCategoria, q}) => {
+
+    return new Promise(( resolve, reject ) => {
+
+        setTimeout(() =>{
+
+            let resp = products
+            if(idCategoria)
+                resp = resp.filter(product=>product.categoria === idCategoria)
+            if(q)
+                resp = resp.filter(producto=>producto.title.toLowerCase().includes(q))
+            resolve(resp)
+        },1500)
+    })
+} */
+
+export const ItemListContainer = ({}) => {
+
+    const [productos, setProductos] = useState([]);
+    const { idCategoria } = useParams();
     const [search, setSearch] = useSearchParams();
 
-    useEffect(()=> {
-        if (idCategoria){
-            gFetch()
-            .then(res =>{
-                setProductos(res.filter(producto => producto.categoria === idCategoria ))
-            })
-            .catch(error=>console.log(error))
-        } else {
-            gFetch()
-            .then(res=>{
-                setProductos(res)
-            })
-            .catch(error => console.log(error))
-        }
-    }, [idCategoria])
-
-    useEffect(() => {
-        if (query) {
-        setSearch({q: query});
-        }/* else{
-            gFetch()
-            .then(res=>{
-                setProductos(res)
-            })
-        } */ /* si yo desbloqueo el else para que se muestren los productos sin texto en el input esto me anula el link del navbar*/ 
-
-    },[query, setSearch, search]); 
-
-useEffect (() => {
-        if (search.get ("q")) {
-            const newArray = productos.filter((producto)=> {
-                return producto.title.toLowerCase().includes(search.get("q"));
-
-        });
-        setProductos(newArray)
-        }
-    }, [search]) 
+    useEffect(() => {  
+      gFetch({idCategoria, q : search.get('q')}).then((res) =>{
+        setProductos(res);
+      });
+    }, [idCategoria, search]);
     
     return (
-        <div className="bg-[#151515] ">
-            <div className="text-center shadow-2xl ">
-                <Titulo text3="CATALOGO"/>
-                <input 
-                    className="input input-bordered "
-                    type="text" 
-                    placeholder="Nombre Producto" 
-                    value={query} 
-                    onChange={e => setQuery(e.target.value)} />
-            </div>
-        
+      <div className="bg-[#151515] ">
+        <div className="text-center shadow-2xl ">
+          <Titulo text3="CATALOGO" />
+          <input
+            className="input input-bordered " 
+            type="text"  
+            placeholder="Nombre Producto" 
+            value={search.get("q")} 
+            onChange={(e) => 
+              e.target.value ? setSearch({ q: e.target.value }) : setSearch({})
+            }/>
+  
+        </div>
         <div className="mx-auto text-center bg-[#151515] flex flex-wrap  font-bold  justify-beetwend text-white pt-[30px] p-[50px]"> 
         { productos.map(producto => (
             <div key={producto.id} className="container-lg  mt-5 w-[450px]  rounded-[50px]  bg-black mb-[30px] mx-auto relative flex justify-center ">
@@ -88,5 +74,3 @@ useEffect (() => {
         )
 
     }
-    
-
