@@ -5,21 +5,6 @@ import { Button } from "../Common/Button"
 import Titulo from "./Title"
 
 
-/* export const gFetch = ({idCategoria, q}) => {
-
-    return new Promise(( resolve, reject ) => {
-
-        setTimeout(() =>{
-
-            let resp = products
-            if(idCategoria)
-                resp = resp.filter(product=>product.categoria === idCategoria)
-            if(q)
-                resp = resp.filter(producto=>producto.title.toLowerCase().includes(q))
-            resolve(resp)
-        },1500)
-    })
-} */
 
 export const ItemListContainer = ({}) => {
 
