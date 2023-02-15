@@ -2,14 +2,20 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {ItemCount} from "../ItemListContainer/ItemCount"
+import { useCartContext } from "../../Context/CartContext";
+
 
 export const ItemDetail = ({ data }) => {
   
   const [goToCart, setGoToCart] = useState(false);
+  const {addProduct}  = useCartContext();
 
 
       const onAdd = (quantity) => {
           setGoToCart(true);
+          addProduct(data,quantity)
+
+          
     } 
    
 
@@ -29,7 +35,7 @@ export const ItemDetail = ({ data }) => {
                 </div>
                 {
                         goToCart
-                        ? <Link to="/cart" className="text-warning mt-3 ">IR AL CATALOGO</Link>
+                        ? <Link to="/cart" className="text-warning mt-3 ">IR AL CARRITO</Link>
                         : <ItemCount initial={3} stock={data.stock} onAdd={onAdd}/> 
                     }
               </section>

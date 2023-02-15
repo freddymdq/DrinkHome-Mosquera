@@ -3,10 +3,14 @@ import { gFetch } from "../Productos/gFetch"
 import { Link, useParams, useSearchParams } from "react-router-dom"
 import { Button } from "../Common/Button"
 import Titulo from "./Title"
+/* import React, {useContext} from 'react'
+import {CartContext} from '../../Context/CartContext' */
 
 
 
 export const ItemListContainer = ({}) => {
+
+ 
 
     const [productos, setProductos] = useState([]);
     const { idCategoria } = useParams();

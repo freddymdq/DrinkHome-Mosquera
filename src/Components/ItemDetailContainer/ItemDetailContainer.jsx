@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"; 
 /* import { gFetch } from "../Productos/gFetch" */
+/* import { useCart } from "../../Context/CartContext"; */
 
 
 const productos = [
@@ -28,6 +29,8 @@ const productos = [
 export const ItemDetailContainer = () => {
   const [data, setData] = useState({});
   const { detalleId } = useParams();
+
+  
 
   useEffect(() => {
       const getData = new Promise(resolve => {
