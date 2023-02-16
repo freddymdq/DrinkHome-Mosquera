@@ -1,13 +1,12 @@
 import React, { useState, useContext} from "react";
-/* import Cart from "../Components/Common/Cart"; */
 
-const CartContext = React.createContext([])
 export const useCartContext = ()=> useContext(CartContext);
 
+const CartContext = React.createContext([])
 
 
 
-const CartProvider = ({Children}) =>{
+const CartProvider = ({children}) =>{
 
     const [cart, setCart] = useState([]);
 
@@ -16,6 +15,15 @@ const CartProvider = ({Children}) =>{
         newCart.push({...item, quantity: newQuantity});
         setCart(newCart)
     }
+    console.log("carrito", cart)
+
+    // Recorre los productos del carrito y los suma
+    const totalPrice = () => {
+        return cart.reduce((prev, act)=> prev + act.quantity * act.price, 0);
+    }
+
+    // Recorre la cantidad de productos en el carrito y los suma.
+    const totalProduct = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
 
     const clearCart = () => setCart([]);
 
@@ -34,11 +42,14 @@ const CartProvider = ({Children}) =>{
             isInCart,
             removeProduct,
             addProduct,
+            totalPrice,
+            totalProduct,
+            cart
         }}>
-            {Children}
+            {children}
         </CartContext.Provider>
     )
 }
 
-export default CartProvider
+export  {CartProvider}
 

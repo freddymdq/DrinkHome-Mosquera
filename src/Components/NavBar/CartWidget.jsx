@@ -1,6 +1,10 @@
 import { Button } from "../Common/Button"
+import { CartContext } from "../../Context/CartContext"
 
 const CartWidget = () => {
+
+
+
     return (
         <>
             <div className="flex-none">

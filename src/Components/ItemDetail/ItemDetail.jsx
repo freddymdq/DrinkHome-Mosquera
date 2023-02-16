@@ -1,8 +1,9 @@
 
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {ItemCount} from "../ItemListContainer/ItemCount"
 import { useCartContext } from "../../Context/CartContext";
+
 
 
 export const ItemDetail = ({ data }) => {
@@ -13,9 +14,8 @@ export const ItemDetail = ({ data }) => {
 
       const onAdd = (quantity) => {
           setGoToCart(true);
-          addProduct(data,quantity)
-
-          
+          addProduct(data, quantity)
+          setGoToCart(!goToCart)
     } 
    
 
