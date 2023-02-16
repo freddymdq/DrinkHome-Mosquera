@@ -30,7 +30,7 @@ export const ItemListContainer = ({}) => {
             className="input input-bordered " 
             type="text"  
             placeholder="Nombre Producto" 
-            value={search.get("q")||""} 
+            value={search.get("q")|| ""} 
             onChange={(e) => 
               e.target.value ? setSearch({ q: e.target.value }) : setSearch({})
             }/>
