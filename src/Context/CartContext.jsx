@@ -10,16 +10,22 @@ const CartProvider = ({children}) =>{
 
     const [cart, setCart] = useState([]);
 
-    const addProduct = (item, quantity) => {
+    const addProduct = (item, newQuantity) => {
+        const newCart = cart.filter(prod => prod.id !== item.id)
+        newCart.push({...item, quantity: newQuantity});
+        setCart(newCart)
+    }
+    console.log("carrito", cart)
+
+    // otra opcion de agregar carrito 
+/*     const addProduct = (item, quantity) => {
         if (isInCart(item.id)) {
             setCart(cart.map(product => {
                 return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
             }));
         } else {
             setCart([...cart, { ...item, quantity }]);
-        }
-    }
-    console.log("carrito", cart)
+        } */
 
     // Recorre los productos del carrito y los suma
     const totalPrice = () => {
@@ -27,8 +33,7 @@ const CartProvider = ({children}) =>{
     }
 
     // Recorre la cantidad de productos en el carrito y los suma.
-    const totalProduct = () => {
-        cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity,0)};
+    const totalProduct = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity,0);
 
     const clearCart = () => setCart([]);
 
