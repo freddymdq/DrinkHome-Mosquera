@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import React, {useContext} from "react";
 
 
-const ItemCart = ({product}) => {
+const ItemCart = ({ product }) => {
     
     const { removeProduct} = useContext();    
 
     return(
-        <div className="">
+        <>
             <img src={product.foto} alt={product.title}/>
             <div>
                 <p>Titulo: {product.title}</p>
@@ -17,7 +17,7 @@ const ItemCart = ({product}) => {
                 <button className="btn btn-outline text-warning" onClick={()=>removeProduct(product.id)}>Eliminar</button>
             </div>
 
-        </div>
+        </>
     )
 }
 

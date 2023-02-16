@@ -9,12 +9,12 @@ export const Cart = () => {
     const { cart , totalPrice} = useCartContext();
       if (cart.length === 0){
         return (
-          <>
-            <h1>No hay productos en el Carrito</h1>
+          <div className="bg-[#151515] text-center h-[100vh]">
+            <h1 className="text-warning font-bold pt-5">No hay productos en el Carrito</h1>
             <Link to={`/categoria`}> <button className="btn btn-ghost text-warning mt-11">Ir a Catalogo</button> </Link>
-          </>
+          </div>
         )
-      }
+      } 
 
 
   return (

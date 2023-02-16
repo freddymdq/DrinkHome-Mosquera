@@ -23,7 +23,8 @@ const CartProvider = ({children}) =>{
     }
 
     // Recorre la cantidad de productos en el carrito y los suma.
-    const totalProduct = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
+    const totalProduct = () => {
+        cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity,0)};
 
     const clearCart = () => setCart([]);
 

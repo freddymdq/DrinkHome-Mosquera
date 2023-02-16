@@ -17,8 +17,8 @@ import Cart from './Components/Common/Cart' ;
 function App() {
   return (
     <>
-    <BrowserRouter>
     <CartProvider>
+    <BrowserRouter>
       <NavBar />
       <Oferta text="HASTA UN 40% OFF" text2="EN TODAS LAS MARCAS"/>
         <Routes>
@@ -29,8 +29,8 @@ function App() {
           <Route path='*' element={ <Navigate to='/' /> } />
         </Routes>
       <Footer />
-    </CartProvider>
     </BrowserRouter>
+    </CartProvider>
     </>
   );
 }
