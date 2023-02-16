@@ -35,7 +35,7 @@ export const ItemDetail = ({ data }) => {
                 </div>
                 {
                         goToCart
-                        ? <Link to="/cart" className="text-warning mt-3 ">IR AL CARRITO</Link>
+                        ? <Link to="/category" className="text-warning mt-3 ">VER MAS PRODUCTOS</Link>
                         : <ItemCount initial={3} stock={data.stock} onAdd={onAdd}/> 
                     }
               </section>

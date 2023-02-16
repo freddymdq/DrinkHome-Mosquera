@@ -18,14 +18,18 @@ export const Cart = () => {
 
 
   return (
-    <div className="bg-[#151515] h-[100vh] text-center">
-      <h1 className="text-warning font-bold pt-[50px]">CARRITO</h1>
+    <div className="bg-[#151515]">
+      <h1 className="text-warning text-center font-bold text-5xl pt-[95px]">SU ORDEN DE COMPRAS</h1>
+      <div className=" flex flex-wrap justify-center pt-[60px]">
       { 
         cart.map(product => <ItemCart key={product.id} product={product}/>)
       }
-      <p>TOTAL: {totalPrice()}</p>
-      <Link to={`/categoria`}> <button className="btn btn-ghost text-warning mt-11">Volver</button> </Link>
+      </div>
+      <p className="text-warning font-black text-center text-5xl p-5">TOTAL: ${totalPrice()}</p>
+      <div className="text-center">
+        <Link to={`/categoria`}> <button className="btn btn-ghost text-warning mt-11 mb-[95px]">Elegir mas productos</button> </Link>
+      </div>
     </div>
   )
 }
-export default Cart
+export default Cart;
