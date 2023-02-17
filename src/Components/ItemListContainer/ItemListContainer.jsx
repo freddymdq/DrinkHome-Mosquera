@@ -3,24 +3,48 @@ import { gFetch } from "../Productos/gFetch"
 import { Link, useParams, useSearchParams } from "react-router-dom"
 import { Button } from "../Common/Button"
 import Titulo from "./Title"
+import { collection, getFirestore, getDocs, query, where } from "firebase/firestore"
+
+
 /* import React, {useContext} from 'react'
 import {CartContext} from '../../Context/CartContext' */
 
 
 
 export const ItemListContainer = ({}) => {
-
- 
-
     const [productos, setProductos] = useState([]);
     const { idCategoria } = useParams();
     const [search, setSearch] = useSearchParams();
 
-    useEffect(() => {  
+/*     useEffect(() => {  
       gFetch({idCategoria, q : search.get('q')}).then((res) =>{
         setProductos(res);
       });
-    }, [idCategoria, search]);
+    }, [idCategoria, search]); */
+
+      useEffect(()=> {
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'Productos');
+        if (idCategoria){
+          const queryFilter = query(queryCollection, where('categoria', '==', idCategoria))
+          getDocs(queryFilter)
+            .then(res =>setProductos(res.docs.map(product =>({id: product.id, ...product.data()}))))
+        } else {
+        getDocs(queryCollection)
+          .then(res=>setProductos(res.docs.map(product=> ({id: product.id, ...product.data() }))))
+        }
+      },[idCategoria])
+      
+       /*  const queryFilter = query(queryCollection, where('categoria', '==', idCategoria))
+ */
+       /*  getDocs(queryFilter)
+          .then(res =>setProductos(res.docs.map(product =>({id: product.id, ...product.data()}))))
+      })
+        if (idCategoria) {
+          
+      } */
+
+    
     
     return (
       <div className="bg-[#151515] ">

@@ -24,7 +24,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <Link to={'/category'}>
-                     <li className="btn btn-ghost normal-case text-xl text-warning"><span className="font-black text-warning">DRIN</span><span className="text-white">HOME</span></li>
+                     <li className="btn btn-ghost normal-case text-xl text-warning"><span className="font-black text-warning">DRINK</span><span className="text-white">HOME</span></li>
                     </Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">

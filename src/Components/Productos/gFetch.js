@@ -9,7 +9,7 @@ let products = [
     {id: 7, title:"VAT 69", description: "Whisky", price:2280,  stock:31,  foto: 'https://i.ibb.co/N9j6h1c/VAT-69-Whisky.png',categoria: 'whisky'},
     {id: 8, title:"TANQUERRAY", description: "London Dry Gin", price:2680, stock:21, foto: 'https://i.ibb.co/hRpvrhr/tanqueray-london-dry-gin.png',categoria: 'spirits'},
     {id: 9, title:"TANQUERRAY", description: "Flor de Sevilla", price:2480, stock:29, foto: 'https://i.ibb.co/L9j6zzV/tanqueray-flor-de-sevilla-gin.png',categoria: 'spirits'},
-    {id: 10, title:"BAILEYS", description: "Aperitive Caramel", price:2280, stock:23,  foto: 'https://i.ibb.co/FK7X2sK/baileys.png',categoria: 'aperitive'},
+    {id: 10, title:"BAILEYS", description: "Aperitive Caramel", price:2280, stock:23,  foto: 'https://i.ibb.co/FK7X2sK/baileys.png',categoria: 'spirits'},
     {id: 11, title:"SMIRNOFF", description: "Vodka Green Apple ", price:1880, stock:17, foto: 'https://i.ibb.co/mC9Dvxv/smirnoff-apple.png',categoria: 'spirits'},
     {id: 12, title:"KETEL ONE", description: "Vodka LimitOne", price:1880, stock:19, foto: 'https://i.ibb.co/hM1sRgP/Ketel-One-VODKA.png',categoria: 'spirits'},
     {id: 13, title:"ZACAPA",  description: "Ron Deliz Victory", price: 21880,  stock:39, foto: 'https://i.ibb.co/qN48MP7/ron-deliz-zacapa.png',categoria: 'spirits'},
@@ -18,7 +18,7 @@ let products = [
     {id: 16, title:"BUCANANS", description: "Whisky Deluxe", price: 12880, stock:20, foto: 'https://i.ibb.co/cFQRMQk/bucanans-delixe-whisky.png',categoria: 'whisky'},
 ]
 
-export const gFetch = ({idCategoria, q}) => {
+/* export const gFetch = ({idCategoria, q}) => {
     return new Promise(( resolve, reject ) => {
         setTimeout(() =>{
             let resp = products
@@ -30,7 +30,7 @@ export const gFetch = ({idCategoria, q}) => {
         },1000)
     })
 }
-
+ */
 
 
 
