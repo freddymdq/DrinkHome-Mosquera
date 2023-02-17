@@ -25,7 +25,8 @@ const CartProvider = ({children}) =>{
             }));
         } else {
             setCart([...cart, { ...item, quantity }]);
-        } */
+        }
+    } */
 
     // Recorre los productos del carrito y los suma
     const totalPrice = () => {

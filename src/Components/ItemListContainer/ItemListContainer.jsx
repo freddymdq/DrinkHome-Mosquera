@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { gFetch } from "../Productos/gFetch"
+/* import { gFetch } from "../Productos/gFetch" */
 import { Link, useParams, useSearchParams } from "react-router-dom"
 import { Button } from "../Common/Button"
 import Titulo from "./Title"
@@ -24,7 +24,7 @@ export const ItemListContainer = ({}) => {
 
       useEffect(()=> {
         const querydb = getFirestore();
-        const queryCollection = collection(querydb, 'Productos');
+        const queryCollection = collection(querydb, 'productos');
         if (idCategoria){
           const queryFilter = query(queryCollection, where('categoria', '==', idCategoria))
           getDocs(queryFilter)
@@ -35,16 +35,7 @@ export const ItemListContainer = ({}) => {
         }
       },[idCategoria])
       
-       /*  const queryFilter = query(queryCollection, where('categoria', '==', idCategoria))
- */
-       /*  getDocs(queryFilter)
-          .then(res =>setProductos(res.docs.map(product =>({id: product.id, ...product.data()}))))
-      })
-        if (idCategoria) {
-          
-      } */
 
-    
     
     return (
       <div className="bg-[#151515] ">

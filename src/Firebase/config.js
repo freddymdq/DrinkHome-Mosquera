@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBrcEkbFKTxd_fBXfd9SNxjZbq3-JAEU1A",
-  authDomain: "drinkhome-8b1d8.firebaseapp.com",
-  projectId: "drinkhome-8b1d8",
-  storageBucket: "drinkhome-8b1d8.appspot.com",
-  messagingSenderId: "791768087011",
-  appId: "1:791768087011:web:51900ec748473e6a7a88d6"
+  apiKey: "AIzaSyB67AV08DoA_0DJ9krIrdPkjHKjE6kf2UI",
+  authDomain: "drinkhomes.firebaseapp.com",
+  projectId: "drinkhomes",
+  storageBucket: "drinkhomes.appspot.com",
+  messagingSenderId: "1086294596128",
+  appId: "1:1086294596128:web:24c92fec93f5d5f0acfa45"
 };
 
 // Initialize Firebase
