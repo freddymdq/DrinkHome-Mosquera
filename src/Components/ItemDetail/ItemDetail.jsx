@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState} from "react";
 import {ItemCount} from "../ItemListContainer/ItemCount"
 import { useCartContext } from "../../Context/CartContext";
 
@@ -29,14 +29,14 @@ export const ItemDetail = ({ data }) => {
               <p className="text-warning font-black text-3xl pb-2 mt-5">{data.title}</p>
               <img src= {data.foto} width="180px" alt="Whisky"/>
               <h2 className="text-white font-bold text-3xl text-center">{data.description}</h2>
-              <p className="text-base-300 pt-1 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam atque quo maxim.</p>
+              <p className="text-white pt-1 text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatibus, explicabo fugiat nam atque quo maxim.</p>
                 <div className="pt-1 ">
                   <span className="text-warning font-bold text-5xl mt-5">${data.price}</span>
                 </div>
                 {
                         goToCart
                         ? <Link to="/category" className="text-warning mt-3 ">VER MAS PRODUCTOS</Link>
-                        : <ItemCount initial={3} stock={data.stock} onAdd={onAdd}/> 
+                        : <ItemCount initial={1} stock={data.stock} onAdd={onAdd}/> 
                     }
               </section>
           </div>

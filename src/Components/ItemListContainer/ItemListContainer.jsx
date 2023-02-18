@@ -16,11 +16,14 @@ export const ItemListContainer = ({}) => {
     const { idCategoria } = useParams();
     const [search, setSearch] = useSearchParams();
 
+
+    // input filtrado manual
 /*     useEffect(() => {  
       gFetch({idCategoria, q : search.get('q')}).then((res) =>{
         setProductos(res);
       });
     }, [idCategoria, search]); */
+
 
       useEffect(()=> {
         const querydb = getFirestore();
@@ -41,14 +44,14 @@ export const ItemListContainer = ({}) => {
       <div className="bg-[#151515] ">
         <div className="text-center shadow-2xl ">
           <Titulo text3="CATALOGO" />
-          <input
+       {/*    <input
             className="input input-bordered " 
             type="text"  
             placeholder="Nombre Producto" 
             value={search.get("q")|| ""} 
             onChange={(e) => 
               e.target.value ? setSearch({ q: e.target.value }) : setSearch({})
-            }/>
+            }/> */}
   
         </div>
         <div className="mx-auto text-center bg-[#151515] flex flex-wrap gap-3 font-bold  justify-beetwend text-white pt-[30px] p-[50px]"> 

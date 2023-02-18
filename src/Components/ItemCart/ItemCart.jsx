@@ -13,9 +13,9 @@ const ItemCart = ({ product }) => {
             <img className="w-[110px] " src={product.foto} alt={product.title}/>
             <div>
                 <p className="text-warning p-1 font-bold">{product.title}</p>
-                <p className="text-warning p-1">Cantidad: {product.quantity}</p>
-                <p className="text-warning p-1">Precio: ${product.price}</p>
+                <p className="text-warning p-1">Unidad: ${product.price}</p>
                 <p className="text-info p-1">Subtotal: ${product.quantity * product.price}</p>
+                <p className="text-warning p-1">Cantidad: {product.quantity}</p>
                 <button className="btn btn-ghost text-warning" onClick={()=>removeProduct(product.id)}>Eliminar</button>
             </div>
 
