@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
     return (
         <>
-            <div className="navbar bg-black ">
+            <div className="navbar bg-black flex justify-between ">
                 <div className="navbar-start">
              
                     <div className="dropdown">

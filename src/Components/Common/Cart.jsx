@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
 import { Button } from "./Button";
+import ModalCompra from "./ModalCompra";
 
 
 export const Cart = () => {
@@ -39,16 +40,17 @@ export const Cart = () => {
 
   return (
     <div className="bg-[#151515]">
-      <h1 className="text-warning text-center font-bold text-5xl pt-[95px]">SU ORDEN DE COMPRAS</h1>
+      <h1 className="text-warning text-center font-bold text-5xl pt-[95px]">ORDEN DE COMPRAS</h1>
       <div className=" flex flex-wrap justify-center pt-[60px]">
       { 
         cart.map(product => <ItemCart key={product.id} product={product}/>)
       }
       </div>
-      <p className="text-warning font-black text-center text-5xl p-5">TOTAL: ${totalPrice()}</p>
+      <p className="text-warning font-black text-center text-5xl  p-5">TOTAL: ${totalPrice()}</p>
       <div className="text-center">
         <Link to={`/categoria`}> <button className="btn btn-ghost bg-black text-warning mt-11 mb-[95px]">Elegir mas productos</button> </Link>
-        <button className="btn btn-ghost text-warning bg-black" onClick={handleClick}>Emitir Compra</button>
+        <ModalCompra onClick={handleClick}/>
+        {/* <button className="btn btn-ghost text-warning bg-black" onClick={handleClick}>Emitir Compra</button> */}
       </div>
     </div>
   )

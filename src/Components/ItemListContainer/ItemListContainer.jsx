@@ -51,12 +51,12 @@ export const ItemListContainer = ({}) => {
             }/>
   
         </div>
-        <div className="mx-auto text-center bg-[#151515] flex flex-wrap  font-bold  justify-beetwend text-white pt-[30px] p-[50px]"> 
+        <div className="mx-auto text-center bg-[#151515] flex flex-wrap gap-3 font-bold  justify-beetwend text-white pt-[30px] p-[50px]"> 
         { productos.map(producto => (
-            <div key={producto.id} className="container-lg  mt-5 w-[450px]  rounded-[50px]  bg-black mb-[30px] mx-auto relative flex justify-center ">
+            <div key={producto.id} className="container-lg  mt-5 w-[400px]  rounded-[50px]  bg-black mb-[30px] mx-auto relative flex justify-center ">
                 <Link to={`/detalle/${producto.id}`}>
                     <div className="mt-10 ">
-                        <h1 className="font-black text-5xl text-warning">{producto.title}</h1>
+                        <h1 className="font-black text-3xl text-warning">{producto.title}</h1>
                     </div>
 
                     <div className="flex flex-col items-center my-auto  ">
