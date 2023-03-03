@@ -8,6 +8,7 @@ import { ItemListContainer } from './Components/ItemListContainer/ItemListContai
 import {ItemDetailContainer} from './Components/ItemDetailContainer/ItemDetailContainer'
 import { CartProvider } from './Context/CartContext';
 import Cart from './Components/Common/Cart' ;
+import { ModalProvider } from './Context/ModalContext';
 
 
 
@@ -21,6 +22,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Oferta text="HASTA UN 40% OFF" text2="EN TODAS LAS MARCAS"/>
+    <ModalProvider>
         <Routes>
           <Route  path='/' element={ <ItemListContainer /> } />
           <Route  path='/categoria/:idCategoria' element={ <ItemListContainer/> } />
@@ -28,6 +30,7 @@ function App() {
           <Route path='/Cart' element={<Cart />} />
           <Route path='*' element={ <Navigate to='/' /> } />
         </Routes>
+    </ModalProvider>
       <Footer />
     </BrowserRouter>
     </CartProvider>

@@ -1,58 +1,52 @@
 import { useEffect, useState } from "react"
-/* import { gFetch } from "../Productos/gFetch" */
-import { Link, useParams, useSearchParams } from "react-router-dom"
+import { Link, useParams} from "react-router-dom"
 import { Button } from "../Common/Button"
 import Titulo from "./Title"
 import { collection, getFirestore, getDocs, query, where } from "firebase/firestore"
 
 
-/* import React, {useContext} from 'react'
-import {CartContext} from '../../Context/CartContext' */
+
 
 
 
 export const ItemListContainer = ({}) => {
     const [productos, setProductos] = useState([]);
     const { idCategoria } = useParams();
-    const [search, setSearch] = useSearchParams();
+   // const [search, setSearch] = useSearchParams();
+
+   useEffect(()=>{
+    const querydb = getFirestore();
+    const queryCollections = collection(querydb, 'productos');
+
+    const queryFilter = idCategoria ? query(queryCollections, where('categoria','==', idCategoria) ) : queryCollections 
+    getDocs(queryFilter)
+      .then(resp =>setProductos(resp.docs.map(product=>({id: product.id,...product.data()}))))
+      .catch(err => console.log(err));
+  },[idCategoria])
 
 
-    // input filtrado manual
-/*     useEffect(() => {  
-      gFetch({idCategoria, q : search.get('q')}).then((res) =>{
-        setProductos(res);
-      });
-    }, [idCategoria, search]); */
-
-
-      useEffect(()=> {
-        const querydb = getFirestore();
-        const queryCollection = collection(querydb, 'productos');
-        if (idCategoria){
-          const queryFilter = query(queryCollection, where('categoria', '==', idCategoria))
-          getDocs(queryFilter)
-            .then(res =>setProductos(res.docs.map(product =>({id: product.id, ...product.data()}))))
-        } else {
-        getDocs(queryCollection)
-          .then(res=>setProductos(res.docs.map(product=> ({id: product.id, ...product.data() }))))
-        }
-      },[idCategoria])
-      
+  // SIN FILTER
+/*   useEffect (() => {
+    const querydb = getFirestore();
+    const queryCollection = collection (querydb, "productos");
+    let q;
+    if(idCategoria) {
+      q = query(queryCollection, where("categoria", "==", idCategoria));
+    }else {
+      q = queryCollection;
+    }
+    getDocs(q).then((res) => 
+    setProductos (
+      res.docs.map((product)=> ({ id:product.id, ...product.data()}))
+    )
+    );
+  }, {idCategoria}) */
 
     
     return (
       <div className="bg-[#151515] ">
         <div className="text-center shadow-2xl ">
           <Titulo text3="CATALOGO" />
-       {/*    <input
-            className="input input-bordered " 
-            type="text"  
-            placeholder="Nombre Producto" 
-            value={search.get("q")|| ""} 
-            onChange={(e) => 
-              e.target.value ? setSearch({ q: e.target.value }) : setSearch({})
-            }/> */}
-  
         </div>
         <div className="mx-auto text-center bg-[#151515] flex flex-wrap gap-3 font-bold  justify-beetwend text-white pt-[30px] p-[50px]"> 
         { productos.map(producto => (

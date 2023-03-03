@@ -17,17 +17,6 @@ const CartProvider = ({children}) =>{
     }
     console.log("carrito", cart)
 
-    // otra opcion de agregar carrito 
-/*     const addProduct = (item, quantity) => {
-        if (isInCart(item.id)) {
-            setCart(cart.map(product => {
-                return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
-            }));
-        } else {
-            setCart([...cart, { ...item, quantity }]);
-        }
-    } */
-
     // Recorre los productos del carrito y los suma
     const totalPrice = () => {
         return cart.reduce((prev, act)=> prev + act.quantity * act.price, 0);
