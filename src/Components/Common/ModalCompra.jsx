@@ -8,7 +8,7 @@ import { useCartContext } from "../../Context/CartContext";
 
 const ModalCompra = () => {
 
-    const { cart , totalPrice} = useCartContext();
+    const { cart , totalPrice, clearCart} = useCartContext();
 
     const order = {
         buyer: {
@@ -26,6 +26,10 @@ const ModalCompra = () => {
         const ordersCollection = collection(db, 'orders');
         addDoc(ordersCollection, order)
         .then(({ id }) => console.log("Guardado en FireStore", id))
+        .catch(err => console.log(err))
+        .finally(() => {
+            clearCart()})
+
       }
 
     return (
